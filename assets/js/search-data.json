@@ -2,11 +2,11 @@
   
     
         "post0": {
-            "title": "",
-            "content": "Surprisal . Surprisal: $- frac{1}{log(p)}$ . #collapse_hide sns.set(style=&quot;darkgrid&quot;) probability = np.arange(0.01, 1.00, 0.01) surprisal = -np.log2(probability) df = pd.DataFrame(dict(x=probability,y=surprisal)) ax = sns.lineplot(x=&quot;x&quot;, y=&quot;y&quot;,data=df) ax.set(xlabel=&#39;Probability&#39;, ylabel=&#39;Surprisal&#39;) ax.annotate( &#39;The sun will rise tommorow -not surprising&#39;, xy=(1.0,0), xytext=(0.6, 1),size=&#39;small&#39;, arrowprops=dict(facecolor=&#39;black&#39;, shrink=0.05) ) ax.annotate( &#39;The world will end tommorow - very surprising&#39;, xy=(0,6), xytext=(0.1,6),size=&#39;small&#39;, arrowprops=dict(facecolor=&#39;black&#39;, shrink=0.05) ) plt.show() . . Entropy . Entropy: $- sum_{i=1}^{n} p_i frac{1}{log(p_i)}$ .",
-            "url": "https://qwyeow.github.io/ml_blog/2020/03/22/2020-03-23-crossentropy.html",
-            "relUrl": "/2020/03/22/2020-03-23-crossentropy.html",
-            "date": " • Mar 22, 2020"
+            "title": "fastai and the New DataBlock API",
+            "content": "Title . Awesome summary . toc: true- branch: master- badges: true- comments: true- author: Hamel Husain &amp; Jeremy Howard | categories: [fastpages, jupyter] | . Surprisal . Surprisal: $- frac{1}{log(p)}$ . #collapse_hide sns.set(style=&quot;darkgrid&quot;) probability = np.arange(0.01, 1.00, 0.01) surprisal = -np.log2(probability) df = pd.DataFrame(dict(x=probability,y=surprisal)) ax = sns.lineplot(x=&quot;x&quot;, y=&quot;y&quot;,data=df) ax.set(xlabel=&#39;Probability&#39;, ylabel=&#39;Surprisal&#39;) ax.annotate( &#39;The sun will rise tommorow -not surprising&#39;, xy=(1.0,0), xytext=(0.6, 1),size=&#39;small&#39;, arrowprops=dict(facecolor=&#39;black&#39;, shrink=0.05) ) ax.annotate( &#39;The world will end tommorow - very surprising&#39;, xy=(0,6), xytext=(0.1,6),size=&#39;small&#39;, arrowprops=dict(facecolor=&#39;black&#39;, shrink=0.05) ) plt.show() . . Entropy . Entropy: $- sum_{i=1}^{n} p_i frac{1}{log(p_i)}$ .",
+            "url": "https://qwyeow.github.io/ml_blog/datablock/2020/03/23/crossentropy.html",
+            "relUrl": "/datablock/2020/03/23/crossentropy.html",
+            "date": " • Mar 23, 2020"
         }
         
     
