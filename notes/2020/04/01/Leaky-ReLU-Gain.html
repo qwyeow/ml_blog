@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -148,7 +148,7 @@ window.onload = wrap_img;
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#RELU">RELU </a></li>
 <li class="toc-entry toc-h1"><a href="#Vanishing-and-exploding-activation-values">Vanishing and exploding activation values </a></li>
-<li class="toc-entry toc-h1"><a href="#Getting-the-correct-scaling">Getting the correct scaling </a></li>
+<li class="toc-entry toc-h1"><a href="#Correct-scaling-for-init">Correct scaling for init </a></li>
 <li class="toc-entry toc-h1"><a href="#Pytorch's-Gain">Pytorch&#39;s Gain </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Example-1:-a-=-0.5">Example 1: a = 0.5 </a></li>
@@ -519,8 +519,8 @@ When <strong>a</strong>, the negative slope, is 0, the negative half of the outp
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Getting-the-correct-scaling">
-<a class="anchor" href="#Getting-the-correct-scaling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting the correct scaling<a class="anchor-link" href="#Getting-the-correct-scaling"> </a>
+<h1 id="Correct-scaling-for-init">
+<a class="anchor" href="#Correct-scaling-for-init" aria-hidden="true"><span class="octicon octicon-link"></span></a>Correct scaling for init<a class="anchor-link" href="#Correct-scaling-for-init"> </a>
 </h1>
 </div>
 </div>
@@ -537,8 +537,45 @@ When <strong>a</strong>, the negative slope, is 0, the negative half of the outp
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$y = (w_{1} \times x_{1}) + (w_{2} \times x_{2}) + (w_{3} \times x_{3})... + (w_{N} \times x_{N})$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The variance of y or  $\sigma^2(y)$ is</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$\sigma^2(y) = \sigma^2 [(w_{1} \times x_{1}) + (w_{2} \times x_{2}) + (w_{3} \times x_{3})... + (w_{N} \times x_{N})] $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since variables $(w_{1} \times x_{1})$,$(w_{2} \times x_{2})$,..$(w_{N} \times x_{N})$ are uncorrelated, then the variance of the sum is the sum of the variances:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$\sigma^2(y) = \sigma^2(w_{1} \times x_{1}) + \sigma^2(w_{2} \times x_{2}) + \sigma^2(w_{3} \times x_{3})... + \sigma^2(w_{N} \times x_{N}) $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>$\sigma^2(y) = \sum_{i=1}^{N} \sigma^2(w_{i} \times x_{i}) $</p>
 
 </div>
@@ -547,7 +584,7 @@ When <strong>a</strong>, the negative slope, is 0, the negative half of the outp
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>As w and x are identically and independantly distributed,</em></p>
+<p>As all $w_{i}$ and $x_{i}$ are identically and independently distributed, we can rewrite as</p>
 <p>$\sigma^2(y) = N \times \sigma^2(w \times x) $</p>
 
 </div>
@@ -556,9 +593,8 @@ When <strong>a</strong>, the negative slope, is 0, the negative half of the outp
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Note that</em> $\sigma^2(w \times x) = E(w^2)\sigma^2(x) + E(x^2)\sigma^2(w) + \sigma^2(x)\sigma^2(w) $</p>
-<p><em>and that w and x are normally distributed, E(w)= E($w^2$) = E(x)= E($x^2$) = 0</em></p>
-<p><em>Hence</em> $\sigma^2(w \times x) = \sigma^2(w)\sigma^2(x) $</p>
+<p>Note that $\sigma^2(w \times x) = E(w^2)\sigma^2(x) + E(x^2)\sigma^2(w) + \sigma^2(x)\sigma^2(w) $</p>
+<p>Since $w_{i}$ and $x_{i}$ are normally distributed with mean 0, $E(w_{i})= E(w_{i}^2) = E(x_{i})= E(x_{i}^2) = 0$.</p>
 
 </div>
 </div>
@@ -566,11 +602,40 @@ When <strong>a</strong>, the negative slope, is 0, the negative half of the outp
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>This gives us</em></p>
-<p>$\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) $</p>
-<p>To keep the variance from neither exploding or vanishing, we need to keep $N \times \sigma^2(w) = 1$ so that $\sigma^2(y) =  \sigma^2(x) $.</p>
-<p>This means that the $\sigma^2(w) = \frac{1}{N}$</p>
-<p>The standard deviation is $\sigma(w) = \frac{1}{\sqrt{N}}$</p>
+<p>Hence we can write $\sigma^2(w \times x) = \sigma^2(w)\sigma^2(x) $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This gives us $\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To keep the variance from neither exploding or vanishing, we need to keep</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$N \times \sigma^2(w) = 1$ so that $\sigma^2(y) =  \sigma^2(x) $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Hence we have to implement the scaling such that the variance $\sigma^2(w) = \frac{1}{N}$</p>
+<p>and correspondingly the standard deviation is $\sigma(w) = \frac{1}{\sqrt{N}}$</p>
 
 </div>
 </div>
