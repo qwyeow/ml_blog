@@ -445,7 +445,9 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$y = (w_{1} \times x_{1}) + (w_{2} \times x_{2}) + (w_{3} \times x_{3})... + (w_{N} \times x_{N})$</p>
+<p>
+$$y = (w_{1} \times x_{1}) + (w_{2} \times x_{2}) + (w_{3} \times x_{3})... + (w_{N} \times x_{N})$$
+</p>
 
 </div>
 </div>
@@ -461,7 +463,7 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sigma^2(y) = \sigma^2 [(w_{1} \times x_{1}) + (w_{2} \times x_{2}) + (w_{3} \times x_{3})... + (w_{N} \times x_{N})] $</p>
+$$\sigma^2(y) = \sigma^2 [(w_{1} \times x_{1}) + (w_{2} \times x_{2}) + (w_{3} \times x_{3})... + (w_{N} \times x_{N})] $$<p></p>
 
 </div>
 </div>
@@ -477,7 +479,9 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sigma^2(y) = \sigma^2(w_{1} \times x_{1}) + \sigma^2(w_{2} \times x_{2}) + \sigma^2(w_{3} \times x_{3})... + \sigma^2(w_{N} \times x_{N}) $</p>
+<p>
+$$\sigma^2(y) = \sigma^2(w_{1} \times x_{1}) + \sigma^2(w_{2} \times x_{2}) + \sigma^2(w_{3} \times x_{3})... + \sigma^2(w_{N} \times x_{N}) $$
+</p>
 
 </div>
 </div>
@@ -485,7 +489,7 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sigma^2(y) = \sum_{i=1}^{N} \sigma^2(w_{i} \times x_{i}) $</p>
+$$\sigma^2(y) = \sum_{i=1}^{N} \sigma^2(w_{i} \times x_{i}) $$<p></p>
 
 </div>
 </div>
@@ -494,7 +498,7 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As all $w_{i}$ and $x_{i}$ are identically and independently distributed, we can rewrite as</p>
-<p>$\sigma^2(y) = N \times \sigma^2(w \times x) $</p>
+$$\sigma^2(y) = N \times \sigma^2(w \times x) $$<p></p>
 
 </div>
 </div>
@@ -502,8 +506,7 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that $\sigma^2(w \times x) = E(w^2)\sigma^2(x) + E(x^2)\sigma^2(w) + \sigma^2(x)\sigma^2(w) $</p>
-<p>Since $w_{i}$ and $x_{i}$ are normally distributed with mean 0, $E(w_{i})= E(w_{i}^2) = E(x_{i})= E(x_{i}^2) = 0$.</p>
+<p>Note that $\sigma^2(w \times x) = E(w^2)\sigma^2(x) + E(x^2)\sigma^2(w) + \sigma^2(x)\sigma^2(w) $.</p>
 
 </div>
 </div>
@@ -511,7 +514,7 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Hence we can write $\sigma^2(w \times x) = \sigma^2(w)\sigma^2(x) $</p>
+<p>Since $w_{i}$ and $x_{i}$ are normally distributed with mean 0,$$E(w_{i})= E(w_{i}^2) = E(x_{i})= E(x_{i}^2) = 0$$</p>
 
 </div>
 </div>
@@ -519,7 +522,31 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This gives us $\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) $</p>
+<p>Hence we can write</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$\sigma^2(w \times x) = \sigma^2(w)\sigma^2(x) $$<p></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This gives us</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) $$<p></p>
 
 </div>
 </div>
@@ -535,7 +562,9 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$N \times \sigma^2(w) = 1$ so that $\sigma^2(y) =  \sigma^2(x) $</p>
+<p>
+$$N \times \sigma^2(w) = 1$ so that $\sigma^2(y) =  \sigma^2(x) $$
+</p>
 
 </div>
 </div>
@@ -543,8 +572,8 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Hence we have to implement the scaling such that the variance $\sigma^2(w) = \frac{1}{N}$</p>
-<p>and correspondingly the standard deviation is $\sigma(w) = \frac{1}{\sqrt{N}}$</p>
+<p>Hence we have to implement the scaling such that the variance $$\sigma^2(w) = \frac{1}{N}$$</p>
+<p>and correspondingly the standard deviation is $$\sigma(w) = \frac{1}{\sqrt{N}}$$</p>
 
 </div>
 </div>
