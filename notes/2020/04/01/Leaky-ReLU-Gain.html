@@ -799,7 +799,7 @@ The negative half, however, might be squished together as the variance of the ne
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$ Let F(y)$ = $Leaky\_ReLU(y)$$<p></p>
+$$ Let F(y) = Leaky\_ReLU(y)$$<p></p>
 
 </div>
 </div>
@@ -819,15 +819,7 @@ $$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-$$P(y\geq 0) =      \frac{1}{2} \text{ and } P(y&lt; 0) =      \frac{1}{2}$$<p></p>
+$$ \text{ Note that }P(y\geq 0) =   \frac{1}{2} \text{ and } P(y&lt; 0) =      \frac{1}{2}$$<p></p>
 
 </div>
 </div>
@@ -879,11 +871,9 @@ $$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p></p>
-<div class="flash flash-success">
-    <svg class="octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
-    <strong>Tip: </strong>See proof on <a href="https://math.stackexchange.com/questions/1884958/variance-of-axb">Stack Exchange</a> on why $$  \sigma^2(ax) = a^2 \times \sigma^2(x), $$  
-</div>
+<blockquote>
+<p>Notep:See proof on <a href="https://math.stackexchange.com/questions/1884958/variance-of-axb">Stack Exchange</a> on why $  \sigma^2(ax) = a^2 \times \sigma^2(x), $</p>
+</blockquote>
 
 </div>
 </div>
@@ -915,15 +905,7 @@ $$\sigma^2(F(y)) = \frac{( 1 + a^2)}{2}\sigma^2(y) $$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-$$\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) ,$$<p></p>
+$$ \text{ Since } \sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) ,$$<p></p>
 
 </div>
 </div>
@@ -1005,7 +987,7 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
 <div class="flash flash-success">
-    <svg class="octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
+    <svg class="octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
     <strong>Tip: </strong>For more in-depth read into the maths of initialization, refer to Pierre Ouannes’s <a href="https://pouannes.github.io/blog/initialization">How to initialize deep neural networks? Xavier and Kaiming initialization</a>
 </div>
 
@@ -1244,7 +1226,12 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$P(y\geq 0)$</p>
+$$P(y\geq 0)\\
+= P(w\times x\geq 0) \\
+= P(w\geq 0 \text{ AND }  x\geq 0 ) \text{  OR }  P(w &lt; 0 \text{ AND }  x &lt; 0 ) \\
+= P(w\geq 0)P(x\geq0)\text{ + } P(w &lt; 0)P(x &lt; 0) ) \\
+= \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) )\\
+= \frac{1}{2}$$<p></p>
 
 </div>
 </div>
@@ -1252,7 +1239,7 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$= P(w\times x\geq 0)$</p>
+$$P(y &lt; 0)$$<p></p>
 
 </div>
 </div>
@@ -1260,7 +1247,7 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$= P(w\geq 0 \text{ AND }  x\geq 0 ) \text{  OR }  P(w &lt; 0 \text{ AND }  x &lt; 0 )$</p>
+$$= P(w\times x &lt; 0)$$<p></p>
 
 </div>
 </div>
@@ -1268,7 +1255,7 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$= P(w\geq 0)P(x\geq0)\text{ + } P(w &lt; 0)P(x &lt; 0) )$</p>
+$$= P(w &lt; 0 \text{ AND } x \geq 0 ) \text { OR } $P(w \geq 0 \text{ AND } x &lt; 0 )$$<p></p>
 
 </div>
 </div>
@@ -1276,7 +1263,9 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$= \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) )$</p>
+<p>
+$$= P(w &lt; 0)P(x\geq 0)\text{ + } P(w\geq 0)P(x &lt; 0) )$$
+</p>
 
 </div>
 </div>
@@ -1284,7 +1273,9 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$= \frac{1}{2}$</p>
+<p>
+$$= \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) )$$
+</p>
 
 </div>
 </div>
@@ -1292,47 +1283,7 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$P(y &lt; 0)$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$= P(w\times x &lt; 0)$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$= P(w &lt; 0 \text{ AND } x \geq 0 )$ OR $P(w \geq 0 \text{ AND } x &lt; 0 )$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$= P(w &lt; 0)P(x\geq 0)\text{ + } P(w\geq 0)P(x &lt; 0) )$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$= \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) )$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$= \frac{1}{2}$</p>
+$$= \frac{1}{2}$$<p></p>
 
 </div>
 </div>
