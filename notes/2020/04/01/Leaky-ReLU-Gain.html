@@ -799,7 +799,7 @@ The negative half, however, might be squished together as the variance of the ne
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$ Let F(y)$ = $Leaky\_ReLU(y)$</p>
+$$ Let F(y)$ = $Leaky\_ReLU(y)$$<p></p>
 
 </div>
 </div>
@@ -807,11 +807,11 @@ The negative half, however, might be squished together as the variance of the ne
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$F(y) =
+$$F(y) =
   \begin{cases}
     y       &amp; \quad \text{if } y \geq 0\\
     a \times y  &amp; \quad \text{if } y &lt; \text{0 where a = negative slope of Leaky ReLU}\end{cases} 
-$</p>
+$$<p></p>
 
 </div>
 </div>
@@ -827,11 +827,11 @@ $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sigma^2(F(y)) =
+$$\sigma^2(F(y)) =
   \begin{cases}
     \sigma^2(y)       &amp; \quad \text{where } P(y \geq 0) = \frac{1}{2} \\
     \sigma^2(a \times y)  &amp; \quad \text{where } P(y &lt; 0) = \frac{1}{2}\end{cases} 
-$</p>
+$$<p></p>
 
 </div>
 </div>
@@ -847,11 +847,11 @@ $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sigma^2(F(y)) =
+$$\sigma^2(F(y)) =
   \begin{cases}
     \sigma^2(y)       &amp; \quad \text{where } P(y \geq 0) = \frac{1}{2} \\
     a^2\sigma^2( y)  &amp; \quad \text{where } P(y &lt; 0) = \frac{1}{2}\end{cases} 
-$</p>
+$$<p></p>
 
 </div>
 </div>
@@ -859,7 +859,7 @@ $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sigma^2(F(y)) = \frac{1}{2}\sigma^2(y) + \frac{1}{2}a^2\sigma^2( y) $</p>
+$$\sigma^2(F(y)) = \frac{1}{2}\sigma^2(y) + \frac{1}{2}a^2\sigma^2( y) $$<p></p>
 
 </div>
 </div>
@@ -867,7 +867,7 @@ $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sigma^2(F(y)) = \frac{1}{2}\sigma^2(y)( 1 + a^2) $</p>
+$$\sigma^2(F(y)) = \frac{1}{2}\sigma^2(y)( 1 + a^2) $$<p></p>
 
 </div>
 </div>
@@ -875,7 +875,7 @@ $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sigma^2(F(y)) = \frac{( 1 + a^2)}{2}\sigma^2(y) $</p>
+$$\sigma^2(F(y)) = \frac{( 1 + a^2)}{2}\sigma^2(y) $$<p></p>
 
 </div>
 </div>
@@ -883,8 +883,7 @@ $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Since</em> 
-$\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) $</p>
+<p>Since $\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) $,</p>
 
 </div>
 </div>
@@ -892,7 +891,8 @@ $\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sigma^2(F(y)) = \frac{( 1 + a^2)}{2}\sigma^2(y) = \frac{( 1 + a^2)}{2} N \times \sigma^2(w) \times \sigma^2(x)$</p>
+$$\sigma^2(F(y)) = \frac{( 1 + a^2)}{2}\sigma^2(y) = \frac{( 1 + a^2)}{2} N \times \sigma^2(w) \times \sigma^2(x)$$
+<pre><code>  </code></pre>
 
 </div>
 </div>
@@ -908,8 +908,8 @@ $\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This means that the variance is  $\sigma^2(w) = \frac{1}{N} \frac{2}{( 1 + a^2)}$ and</p>
-<p>the standard deviation is $\sigma(w) = \sqrt\frac{1}{ N}\sqrt{\frac{2}{( 1 + a^2)}}$</p>
+<p>This means that the variance is<br>
+$$\sigma^2(w) = \frac{1}{N} \frac{2}{( 1 + a^2)}$$</p>
 
 </div>
 </div>
@@ -917,7 +917,17 @@ $\sigma^2(y) = N \times \sigma^2(w) \times \sigma^2(x) $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see from the above that the leaky ReLU gain is indeed $\sqrt{\frac{2}{( 1 + a^2)}}$</p>
+<p>and the standard deviation is<br>
+$$\sigma(w) = \sqrt\frac{1}{ N}\sqrt{\frac{2}{( 1 + a^2)}}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see from the above that the leaky ReLU gain is indeed<br>
+$$\sqrt{\frac{2}{( 1 + a^2)}}$$</p>
 
 </div>
 </div>
