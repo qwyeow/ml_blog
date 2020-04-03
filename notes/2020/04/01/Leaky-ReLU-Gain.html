@@ -107,7 +107,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -151,12 +151,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Correct-scaling-for-init">Correct scaling for init </a></li>
 <li class="toc-entry toc-h1"><a href="#ReLU">ReLU </a></li>
 <li class="toc-entry toc-h1"><a href="#Correct-init-scaling-for-Leaky-ReLU">Correct init scaling for Leaky ReLU </a></li>
-<li class="toc-entry toc-h1"><a href="#Gain-in-Pytorch-documentation">Gain in Pytorch documentation </a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#Example-1:-a-=-0.5">Example 1: a = 0.5 </a></li>
-<li class="toc-entry toc-h2"><a href="#Example-2:-a-=-0.25">Example 2: a = 0.25 </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h1"><a href="#Pytorch-documentation">Pytorch documentation </a></li>
 <li class="toc-entry toc-h1"><a href="#Appendix">Appendix </a></li>
 <li class="toc-entry toc-h1"><a href="#Reference">Reference </a></li>
 </ul><!--
@@ -671,8 +666,8 @@ Here is the simple ReLU function, commonly used as the non-linear activation fun
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ReLU</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-   <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">X</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ReLU</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -685,10 +680,10 @@ Here is the simple ReLU function, commonly used as the non-linear activation fun
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The ReLU function can be "Leaky". The plots below show how different Leaky ReLU functions affect the distribution of the outputs. The inputs come from a normal distribution of $N(0,1)$. 
-When <strong>a</strong>, the negative slope, is 0, the negative half of the output disribution is gone. This is also the normal ReLU function.</p>
-<p>As a increases, the negative portion of the output distribution also starts to become bigger.</p>
-<p>When a is 1, the input distribution is exactly the same as the output distribution.</p>
+<p>The ReLU function can be "Leaky". The plots below show how different Leaky ReLU functions affect the distribution of the outputs. The inputs come from a normal distribution of $N(0,1)$.<br>
+When <strong>a</strong>, the negative slope, is 0, the negative half of the output disribution is gone. This is also the normal ReLU function.<br>
+As <strong>a</strong> increases, the left-hand side i.e. the negative portion of the output distribution also starts to become bigger.<br>
+When <strong>a</strong> is 1, the input distribution is exactly the same as the output distribution.</p>
 
 </div>
 </div>
@@ -774,6 +769,14 @@ When <strong>a</strong>, the negative slope, is 0, the negative half of the outp
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Clearly, looking at the plots above, we can see that after going through the different Leaky ReLU functions, the output distributions change in different manners.</p>
 <p>The problem with having a different output distribution from the input distribution is that deep-learning models require the initialization to be precise. Otherwise, the activations would either explode or vanish.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since Leaky ReLU affects the output distribtuion, as we have seen from the plots above, the scaling should be different too. Otherwise we would encounter exploding or vanishing activations once more.</p>
 
 </div>
 </div>
@@ -874,7 +877,7 @@ $$<p></p>
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg>
-    <strong>Note: </strong>See proof on <a href="https://math.stackexchange.com/questions/1884958/variance-of-axb">Stack Exchange</a> on why $  \sigma^2(ax) = a^2 \times \sigma^2(x), $  
+    <strong>Note: </strong>See proof on <a href="https://math.stackexchange.com/questions/1884958/variance-of-axb">Stack Exchange</a> on why $  \sigma^2(ax) = a^2 \times \sigma^2(x) $  
 </div>
 
 </div>
@@ -984,6 +987,24 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gain_using_formula</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -999,8 +1020,123 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Gain-in-Pytorch-documentation">
-<a class="anchor" href="#Gain-in-Pytorch-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gain in Pytorch documentation<a class="anchor-link" href="#Gain-in-Pytorch-documentation"> </a>
+<p>The <em>gain</em> for <em>Leaky Relu</em> is $\sqrt{ \frac{2}{(1+a^2)}}$, where <em>a</em> is the negative slope of the <em>Leaky Relu</em> function. Let's go through some simple examples using the math fomula and the gain from <code>pytorch.nn.init</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When a is 0.5, the gain is</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+\begin{align}
+\sqrt{ \frac{2}{(1+(0.5)^2)}} &amp;= \sqrt{ 1.6} = 1.2649
+\end{align}
+$$
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gain_using_pytorch</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">calculate_gain</span><span class="p">(</span><span class="s1">'leaky_relu'</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Pytorch's gain"</span><span class="p">,</span><span class="n">gain_using_pytorch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Calculated gain"</span><span class="p">,</span><span class="n">gain_using_formula</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Pytorch's gain 1.2649110640673518
+Calculated gain 1.2649110640673518
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When the negative slope is 0.25, the gain is</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+\begin{align}
+\sqrt{ \frac{2}{(1+(0.25)^2)}} = \sqrt{ 1.88} = 1.3719 
+\end{align}
+$$<p></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gain_using_pytorch</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">calculate_gain</span><span class="p">(</span><span class="s1">'leaky_relu'</span><span class="p">,</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Pytorch's gain"</span><span class="p">,</span><span class="n">gain_using_pytorch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Calculated gain"</span><span class="p">,</span><span class="n">gain_using_formula</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Pytorch's gain 1.3719886811400708
+Calculated gain 1.3719886811400708
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Pytorch-documentation">
+<a class="anchor" href="#Pytorch-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pytorch documentation<a class="anchor-link" href="#Pytorch-documentation"> </a>
 </h1>
 </div>
 </div>
@@ -1008,7 +1144,6 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>However, so far we have not introduce the non-linear function, Leaky ReLU, into the equation. Since Leaky ReLU affects the output distribtuion, as we have seen from the plots above, the scaling should be different too. Otherwise we would encounter exploding or vanishing activations once more.</p>
 <p>When we refer to <a href="https://pytorch.org/docs/1.1.0/_modules/torch/nn/init.html#kaiming_normal_">Pytorch documentation</a>, we see the following:</p>
 
 </div>
@@ -1080,137 +1215,6 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <em>gain</em> for <em>Leaky Relu</em> is $\sqrt{ \frac{2}{(1+a^2)}}$, where <em>a</em> is the negative slope of the <em>Leaky Relu</em> function. Let's run some simple examples.</p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gain_math</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example-1:-a-=-0.5">
-<a class="anchor" href="#Example-1:-a-=-0.5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example 1: a = 0.5<a class="anchor-link" href="#Example-1:-a-=-0.5"> </a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When a is 0.5, the gain is $\sqrt{ \frac{2}{(1+(0.5)^2)}} \\
-= \sqrt{ 1.6}  \\
-= 1.2649$</p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gain_nn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">calculate_gain</span><span class="p">(</span><span class="s1">'leaky_relu'</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">gain_nn</span><span class="p">,</span> <span class="n">gain_math</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(1.2649110640673518, 1.2649110640673518)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example-2:-a-=-0.25">
-<a class="anchor" href="#Example-2:-a-=-0.25" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example 2: a = 0.25<a class="anchor-link" href="#Example-2:-a-=-0.25"> </a>
-</h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When the negative slope is 0.25, the gain is $\sqrt{ \frac{2}{(1+(0.25)^2)}} \\
-= \sqrt{ 1.88}  \\
-= 1.3719 $</p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gain_nn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">calculate_gain</span><span class="p">(</span><span class="s1">'leaky_relu'</span><span class="p">,</span><span class="mf">0.25</span><span class="p">)</span>
-<span class="n">gain_nn</span><span class="p">,</span> <span class="n">gain_math</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(1.3719886811400708, 1.3719886811400708)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Appendix">
 <a class="anchor" href="#Appendix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appendix<a class="anchor-link" href="#Appendix"> </a>
 </h1>
@@ -1220,7 +1224,11 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Why $P(y\geq 0) =   \frac{1}{2} \text{ and }  P(y&lt; 0) = \frac{1}{2}$</p>
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg>
+    <strong>Note: </strong>why $P(y\geq 0) =     \frac{1}{2} \text{ and } P(y&lt; 0) =      \frac{1}{2}$ 
+</div>
 
 </div>
 </div>
@@ -1236,8 +1244,7 @@ P(y\geq 0) &amp; = P(w\times x\geq 0) \\
 &amp; = \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) ) \\
 &amp; = \frac{1}{2}
 \end{align}
-$$
-<pre><code>  </code></pre>
+$$<p></p>
 
 </div>
 </div>
