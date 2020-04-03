@@ -851,7 +851,7 @@ $$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$ \text{Since } \sigma^2(ax) = a^2 \times \sigma^2(x), $$<p></p>
+$$ \text{Since } \sigma^2(ay) = a^2 \times \sigma^2(y), $$<p></p>
 
 </div>
 </div>
@@ -871,9 +871,11 @@ $$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote>
-<p>Notep:See proof on <a href="https://math.stackexchange.com/questions/1884958/variance-of-axb">Stack Exchange</a> on why $  \sigma^2(ax) = a^2 \times \sigma^2(x), $</p>
-</blockquote>
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg>
+    <strong>Note: </strong>See proof on <a href="https://math.stackexchange.com/questions/1884958/variance-of-axb">Stack Exchange</a> on why $  \sigma^2(ax) = a^2 \times \sigma^2(x), $  
+</div>
 
 </div>
 </div>
@@ -921,7 +923,7 @@ $$\sigma^2(F(y)) = \frac{( 1 + a^2)}{2}\sigma^2(y) = \frac{( 1 + a^2)}{2} N \tim
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To keep the variance from neither exploding or vanishing, we need to keep $\sigma^2(y) =  \sigma^2(x)$. Hence we make sure that</p>
+<p>To keep the variance from neither exploding or vanishing, we need to keep $\sigma^2(F(y)) =  \sigma^2(x)$. Hence we make sure that</p>
 
 </div>
 </div>
@@ -937,7 +939,7 @@ $$ \frac{( 1 + a^2)}{2} \times N \times \sigma^2(w) = 1 $$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This means that the variance is</p>
+<p>This means that the variance of $w$ is</p>
 
 </div>
 </div>
@@ -953,7 +955,7 @@ $$\sigma^2(w) = \frac{1}{N} \frac{2}{( 1 + a^2)}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>and the standard deviation is</p>
+<p>and the standard deviation of $w$ is</p>
 
 </div>
 </div>
@@ -1226,12 +1228,16 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$P(y\geq 0)\\
-= P(w\times x\geq 0) \\
-= P(w\geq 0 \text{ AND }  x\geq 0 ) \text{  OR }  P(w &lt; 0 \text{ AND }  x &lt; 0 ) \\
-= P(w\geq 0)P(x\geq0)\text{ + } P(w &lt; 0)P(x &lt; 0) ) \\
-= \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) )\\
-= \frac{1}{2}$$<p></p>
+$$
+\begin{align}
+P(y\geq 0) &amp; = P(w\times x\geq 0) \\
+&amp; = P(w\geq 0 \text{ AND }  x\geq 0 ) \text{  OR }  P(w &lt; 0 \text{ AND }  x &lt; 0 ) \\
+&amp; = P(w\geq 0)P(x\geq0)\text{ + } P(w &lt; 0)P(x &lt; 0) ) \\
+&amp; = \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) ) \\
+&amp; = \frac{1}{2}
+\end{align}
+$$
+<pre><code>  </code></pre>
 
 </div>
 </div>
@@ -1239,51 +1245,15 @@ $$P(y\geq 0)\\
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$P(y &lt; 0)$$<p></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-$$= P(w\times x &lt; 0)$$<p></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-$$= P(w &lt; 0 \text{ AND } x \geq 0 ) \text { OR } $P(w \geq 0 \text{ AND } x &lt; 0 )$$<p></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>
-$$= P(w &lt; 0)P(x\geq 0)\text{ + } P(w\geq 0)P(x &lt; 0) )$$
-</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>
-$$= \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) )$$
-</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-$$= \frac{1}{2}$$<p></p>
+$$
+\begin{align}
+P(y &lt; 0) &amp; = P(w\times x &lt; 0) \\
+&amp;= P(w &lt; 0 \text{ AND } x \geq 0 ) \text { OR } P(w \geq 0 \text{ AND } x &lt; 0 ) \\ 
+&amp;= P(w &lt; 0)P(x\geq 0)\text{ + } P(w\geq 0)P(x &lt; 0) )\\
+&amp;= \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) )  \\
+&amp;= \frac{1}{2}
+\end{align}
+$$<p></p>
 
 </div>
 </div>
