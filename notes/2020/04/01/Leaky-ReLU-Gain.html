@@ -151,7 +151,6 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Correct-scaling-for-init">Correct scaling for init </a></li>
 <li class="toc-entry toc-h1"><a href="#ReLU">ReLU </a></li>
 <li class="toc-entry toc-h1"><a href="#Correct-init-scaling-for-Leaky-ReLU">Correct init scaling for Leaky ReLU </a></li>
-<li class="toc-entry toc-h1"><a href="#Pytorch-documentation">Pytorch documentation </a></li>
 <li class="toc-entry toc-h1"><a href="#Appendix">Appendix </a></li>
 <li class="toc-entry toc-h1"><a href="#Reference">Reference </a></li>
 </ul><!--
@@ -193,6 +192,18 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/ml_blog/images/copied_from_nb/my_icons/forum_question.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash flash-success">
+    <svg class="octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
+    <strong>Tip: </strong>The forum question arose from fastai’s Deep Learning course <a href="https://youtu.be/4u8FxNEDUeg?t=5732">Lesson 8 (2019) - Deep Learning from the Foundations</a> by Jeremy Howard.
+</div>
 
 </div>
 </div>
@@ -405,7 +416,7 @@ Isn't the simpler $\left\lvert a \right\rvert$ a better choice compared with $a^
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
 <div class="flash flash-success">
-    <svg class="octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
+    <svg class="octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
     <strong>Tip: </strong>For a more in-depth read, refer to Sylvain Gugger’s <a href="https://github.com/fastai/course-v3/blob/master/nbs/dl2/02b_initializing.ipynb">Why you need a good init</a>
 </div>
 
@@ -634,7 +645,7 @@ $$\sigma(w) = \frac{1}{\sqrt{N}}$$<p></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
 <div class="flash flash-success">
-    <svg class="octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
+    <svg class="octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
     <strong>Tip: </strong>For a more in-depth read, refer to Prateek Joshi’s <a href="https://prateekvjoshi.com/2016/03/29/understanding-xavier-initialization-in-deep-neural-networks">Understanding Xavier Initialization In Deep Neural Networks</a>. If you want to play with codes to gain some intuition, refer to Sylvain Gugger’s notebook <a href="https://github.com/fastai/course-v3/blob/master/nbs/dl2/02b_initializing.ipynb">Why you need a good init</a> under the section "The magic number for scaling". 
 </div>
 
@@ -680,7 +691,7 @@ Here is the simple ReLU function, commonly used as the non-linear activation fun
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The ReLU function can be "Leaky". The plots below show how different Leaky ReLU functions affect the distribution of the outputs. The inputs come from a normal distribution of $N(0,1)$.<br>
+<p>The ReLU function can be "Leaky". The plots below show how different negative slopes of the Leaky ReLU functions affect the distribution of the outputs. The inputs come from a normal distribution of $N(0,1)$.<br>
 When <strong>a</strong>, the negative slope, is 0, the negative half of the output disribution is gone. This is also the normal ReLU function.<br>
 As <strong>a</strong> increases, the left-hand side i.e. the negative portion of the output distribution also starts to become bigger.<br>
 When <strong>a</strong> is 1, the input distribution is exactly the same as the output distribution.</p>
@@ -776,7 +787,7 @@ When <strong>a</strong> is 1, the input distribution is exactly the same as the 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since Leaky ReLU affects the output distribtuion, as we have seen from the plots above, the scaling should be different too. Otherwise we would encounter exploding or vanishing activations once more.</p>
+<p>Since Leaky ReLU affects the output distribution, as we have seen from the plots above, the scaling should be different too. Otherwise we would encounter exploding or vanishing activations once more.</p>
 
 </div>
 </div>
@@ -793,8 +804,8 @@ When <strong>a</strong> is 1, the input distribution is exactly the same as the 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Before going inot the maths, some intuition: regardless of the value of negative slope, half of the distribution remains positive and the other half negative.<br>
-The negative half, however, might be squished together as the variance of the negtive half becomes smaller. As such, we need to calculate how much gain we need to compensate this smaller variance.</p>
+<p>Before going into the math, some intuition: regardless of the value of negative slope, half of the distribution remains positive and the other half negative.
+The negative half, however, might be squished together as the variance of the negative half becomes smaller. As such, we need to calculate how much gain we need to compensate this smaller variance.</p>
 
 </div>
 </div>
@@ -926,6 +937,18 @@ $$\sigma^2(F(y)) = \frac{( 1 + a^2)}{2}\sigma^2(y) = \frac{( 1 + a^2)}{2} N \tim
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap octicon octicon-zap" viewbox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path></svg>
+    <strong>Important: </strong>The 5 lines of equations above is the gist of how to calculate the gain.
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>To keep the variance from neither exploding or vanishing, we need to keep $\sigma^2(F(y)) =  \sigma^2(x)$. Hence we make sure that</p>
 
 </div>
@@ -1010,7 +1033,7 @@ $$\sqrt{\frac{2}{( 1 + a^2)}}$$<p></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
 <div class="flash flash-success">
-    <svg class="octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
+    <svg class="octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z"></path></svg>
     <strong>Tip: </strong>For more in-depth read into the maths of initialization, refer to Pierre Ouannes’s <a href="https://pouannes.github.io/blog/initialization">How to initialize deep neural networks? Xavier and Kaiming initialization</a>
 </div>
 
@@ -1052,8 +1075,8 @@ $$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gain_using_pytorch</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">calculate_gain</span><span class="p">(</span><span class="s1">'leaky_relu'</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Pytorch's gain"</span><span class="p">,</span><span class="n">gain_using_pytorch</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Calculated gain"</span><span class="p">,</span><span class="n">gain_using_formula</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Pytorch's gain : "</span><span class="p">,</span><span class="n">gain_using_pytorch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Calculated gain: "</span><span class="p">,</span><span class="n">gain_using_formula</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1066,8 +1089,8 @@ $$
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Pytorch's gain 1.2649110640673518
-Calculated gain 1.2649110640673518
+<pre>Pytorch's gain :  1.2649110640673518
+Calculated gain:  1.2649110640673518
 </pre>
 </div>
 </div>
@@ -1106,8 +1129,8 @@ $$<p></p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gain_using_pytorch</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">calculate_gain</span><span class="p">(</span><span class="s1">'leaky_relu'</span><span class="p">,</span><span class="mf">0.25</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Pytorch's gain"</span><span class="p">,</span><span class="n">gain_using_pytorch</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Calculated gain"</span><span class="p">,</span><span class="n">gain_using_formula</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Pytorch's gain : "</span><span class="p">,</span><span class="n">gain_using_pytorch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Calculated gain: "</span><span class="p">,</span><span class="n">gain_using_formula</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1120,8 +1143,8 @@ $$<p></p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Pytorch's gain 1.3719886811400708
-Calculated gain 1.3719886811400708
+<pre>Pytorch's gain :  1.3719886811400708
+Calculated gain:  1.3719886811400708
 </pre>
 </div>
 </div>
@@ -1135,9 +1158,65 @@ Calculated gain 1.3719886811400708
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pytorch-documentation">
-<a class="anchor" href="#Pytorch-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pytorch documentation<a class="anchor-link" href="#Pytorch-documentation"> </a>
+<h1 id="Appendix">
+<a class="anchor" href="#Appendix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appendix<a class="anchor-link" href="#Appendix"> </a>
 </h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg>
+    <strong>Note: </strong>why $P(y\geq 0) =     \frac{1}{2} \text{ and } P(y&lt; 0) =      \frac{1}{2}$ 
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+\begin{align}
+P(y\geq 0) &amp; = P(w\times x\geq 0) \\
+&amp; = P(w\geq 0 \text{ AND }  x\geq 0 ) \text{  OR }  P(w &lt; 0 \text{ AND }  x &lt; 0 ) \\
+&amp; = P(w\geq 0)P(x\geq0)\text{ + } P(w &lt; 0)P(x &lt; 0) ) \\
+&amp; = \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) ) \\
+&amp; = \frac{1}{2}
+\end{align}
+$$<p></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+\begin{align}
+P(y &lt; 0) &amp; = P(w\times x &lt; 0) \\
+&amp;= P(w &lt; 0 \text{ AND } x \geq 0 ) \text { OR } P(w \geq 0 \text{ AND } x &lt; 0 ) \\ 
+&amp;= P(w &lt; 0)P(x\geq 0)\text{ + } P(w\geq 0)P(x &lt; 0) )\\
+&amp;= \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) )  \\
+&amp;= \frac{1}{2}
+\end{align}
+$$<p></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg>
+    <strong>Note: </strong>Pytorch documentation
+</div>
+
 </div>
 </div>
 </div>
@@ -1199,7 +1278,7 @@ Calculated gain 1.3719886811400708
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is an extra <strong>Gain</strong>, $\sqrt{     \frac{2}{(1+a^2)\times fan\_in}}$, that needs to be added to the scaling.</p>
+<p>There is a <strong>gain</strong>  <code>std = gain / math.sqrt(fan)</code> that is added to the scaling.</p>
 
 </div>
 </div>
@@ -1208,59 +1287,6 @@ Calculated gain 1.3719886811400708
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/ml_blog/images/copied_from_nb/my_icons/recommended_gain_pytorch.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Appendix">
-<a class="anchor" href="#Appendix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appendix<a class="anchor-link" href="#Appendix"> </a>
-</h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p></p>
-<div class="flash">
-    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg>
-    <strong>Note: </strong>why $P(y\geq 0) =     \frac{1}{2} \text{ and } P(y&lt; 0) =      \frac{1}{2}$ 
-</div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-$$
-\begin{align}
-P(y\geq 0) &amp; = P(w\times x\geq 0) \\
-&amp; = P(w\geq 0 \text{ AND }  x\geq 0 ) \text{  OR }  P(w &lt; 0 \text{ AND }  x &lt; 0 ) \\
-&amp; = P(w\geq 0)P(x\geq0)\text{ + } P(w &lt; 0)P(x &lt; 0) ) \\
-&amp; = \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) ) \\
-&amp; = \frac{1}{2}
-\end{align}
-$$<p></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-$$
-\begin{align}
-P(y &lt; 0) &amp; = P(w\times x &lt; 0) \\
-&amp;= P(w &lt; 0 \text{ AND } x \geq 0 ) \text { OR } P(w \geq 0 \text{ AND } x &lt; 0 ) \\ 
-&amp;= P(w &lt; 0)P(x\geq 0)\text{ + } P(w\geq 0)P(x &lt; 0) )\\
-&amp;= \frac{1}{2}P(x\geq0)\text{ + } \frac{1}{2}P(x &lt; 0) )  \\
-&amp;= \frac{1}{2}
-\end{align}
-$$<p></p>
 
 </div>
 </div>
@@ -1292,6 +1318,9 @@ $$<p></p>
 </li>
 <li>
 <p><a href="https://www.fast.ai/2019/05/13/blogging-advice/">Advice for Better Blog Posts </a> by Rachel Thomas</p>
+</li>
+<li>
+<p><a href="https://youtu.be/4u8FxNEDUeg?t=5732">Lesson 8 (2019) - Deep Learning from the Foundations</a> by Jeremy Howard</p>
 </li>
 </ol>
 
